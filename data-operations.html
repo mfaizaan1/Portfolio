@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Data Infrastructure Operation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f1014;
+            color: #f6d365;
+        }
+
+        header,
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 42px 0 24px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 22px;
+            color: #ffd84d;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 46px;
+            color: #ffd84d;
+        }
+
+        .subtitle {
+            margin: 10px 0 0;
+            color: #e8b94a;
+            font-size: 18px;
+        }
+
+        .dashboard-preview {
+            overflow: hidden;
+            border: 1px solid rgba(255, 216, 77, 0.22);
+            border-radius: 12px;
+            background: #181a20;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .dashboard-preview img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .details {
+            margin: 28px 0 60px;
+            padding: 24px;
+            border: 1px solid rgba(255, 216, 77, 0.18);
+            border-radius: 12px;
+            background: #181a20;
+        }
+
+        .details h2 {
+            margin: 0 0 12px;
+            color: #ffd84d;
+            font-size: 24px;
+        }
+
+        .details p {
+            margin: 0 0 18px;
+            color: #f4d884;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .details h3 {
+            margin: 20px 0 8px;
+            color: #ffd84d;
+            font-size: 19px;
+        }
+
+        .details ul,
+        .details ol {
+            margin: 0;
+            padding-left: 22px;
+            color: #f4d884;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .details li {
+            margin-bottom: 4px;
+        }
+
+        .detail-table {
+            width: 100%;
+            margin: 12px 0 20px;
+            border-collapse: collapse;
+            color: #f4d884;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .detail-table th,
+        .detail-table td {
+            padding: 12px;
+            border: 1px solid rgba(255, 216, 77, 0.18);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .detail-table th {
+            color: #ffd84d;
+            background: #101116;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        .measure-list {
+            margin: 0;
+            padding: 16px;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 216, 77, 0.18);
+            border-radius: 8px;
+            background: #101116;
+            color: #f4d884;
+            font-size: 15px;
+            line-height: 1.7;
+            white-space: pre-wrap;
+        }
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a class="back-link" href="index.html">Back to Creations</a>
+        <h1>Data Infrastructure Operation</h1>
+        <p class="subtitle">Data Visualization Project</p>
+    </header>
+
+    <main>
+        <section class="dashboard-preview" aria-label="Data Infrastructure Operation dashboard preview">
+            <img src="data-operations.png" alt="Data Infrastructure Operation dashboard">
+        </section>
+
+        <section class="details">
+            <h2>Project Details</h2>
+            <p>This Data Infrastructure Operation Dashboard is built for sellers who need to present a realistic AI cloud infrastructure operations story with clarity and business value. It highlights Northstar Compute, a fictional but realistic mid-sized cloud infrastructure provider that operates regional data centers and sells computing capacity to AI startups, SaaS companies, enterprise customers, and research organizations.</p>
+
+            <p>Northstar customers purchase GPU compute hours, CPU compute hours, storage, and network egress. As AI demand accelerates growth, management needs to understand whether revenue is rising profitably or whether infrastructure costs and capacity constraints are growing even faster.</p>
+
+            <h3>Business Objective</h3>
+            <p>Monitor whether Northstar Compute is growing profitably without running out of infrastructure capacity.</p>
+
+            <h3>Tools Used</h3>
+            <p>Power BI and Power Query.</p>
+
+            <h3>Business Metrics in Focus</h3>
+            <ul>
+                <li>Revenue Growth</li>
+                <li>Gross Margin %</li>
+                <li>Capacity Utilization %</li>
+            </ul>
+
+            <h3>Metric Mapping</h3>
+            <div class="table-wrap">
+                <table class="detail-table">
+                    <thead>
+                        <tr>
+                            <th>Raw Column</th>
+                            <th>Business Metric</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Revenue_USD</td>
+                            <td>Revenue</td>
+                        </tr>
+                        <tr>
+                            <td>Infrastructure Cost</td>
+                            <td>Gross Profit</td>
+                        </tr>
+                        <tr>
+                            <td>Revenue + Gross Profit</td>
+                            <td>Gross Margin %</td>
+                        </tr>
+                        <tr>
+                            <td>Usage + Capacity</td>
+                            <td>Capacity Utilization %</td>
+                        </tr>
+                        <tr>
+                            <td>Outage Hours</td>
+                            <td>SLA Reliability</td>
+                        </tr>
+                        <tr>
+                            <td>Revenue + Usage</td>
+                            <td>Revenue per Compute Hour</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Supporting Metrics</h3>
+            <ul>
+                <li>Revenue Growth: Revenue per Compute Hour and Total Cost</li>
+                <li>Gross Margin: Gross Profit</li>
+                <li>Capacity Utilization: SLA Reliability and Region</li>
+            </ul>
+
+            <h3>Columns from Data</h3>
+            <ul>
+                <li>Revenue_USD</li>
+                <li>Infrastructure Cost</li>
+                <li>Energy Cost</li>
+                <li>Cloud Provider Cost</li>
+                <li>Support Cost</li>
+                <li>Capacity Available Hours</li>
+                <li>Outage Hours</li>
+                <li>Usage Hours</li>
+            </ul>
+
+            <h3>Dashboard Design Phases</h3>
+            <div class="table-wrap">
+                <table class="detail-table">
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>Selection</th>
+                            <th>Visual Type</th>
+                            <th>Visual Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Primary KPI Row</td>
+                            <td>Revenue, Gross Margin %, Capacity Utilization</td>
+                            <td>Card, Card, Card</td>
+                            <td>Medium, Medium, Medium</td>
+                        </tr>
+                        <tr>
+                            <td>Supporting KPI Row</td>
+                            <td>Revenue per Compute Hour, Gross Profit, SLA Reliability</td>
+                            <td>Card, Card, Card</td>
+                            <td>Medium, Medium, Medium</td>
+                        </tr>
+                        <tr>
+                            <td>Diagnostic Visual</td>
+                            <td>Gross Margin % by Region</td>
+                            <td>Column Chart</td>
+                            <td>Large</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>DAX Measures</h3>
+            <p>This project uses DAX measures to calculate business metrics including Capacity Utilization %, Cost per Compute Hour, Gross Margin %, Average Customer Satisfaction, Gross Profit, Revenue, Revenue per Compute Hour, SLA Reliability %, Total Cost, and Total Orders.</p>
+            <pre class="measure-list"><code>Capacity Utilization % = DIVIDE(SUM(Usage_Fact[Usage_Hours]), SUM(Usage_Fact[Capacity_Available_Hours]))
+
+Average Customer Satisfaction = AVERAGE(Usage_Fact[Customer_Satisfaction])
+
+Cost per Compute Hour =
+DIVIDE(
+    [Total Cost],
+    SUM('Usage_Fact'[Usage_Hours])
+)
+
+Gross Margin % = DIVIDE([Gross Profit], [Revenue])
+
+Gross Profit = SUM(Usage_Fact[Revenue_USD]) - (SUM(Usage_Fact[Cloud_Provider_Cost_USD]) + SUM(Usage_Fact[Energy_Cost_USD]) + SUM(Usage_Fact[Infrastructure_Cost_USD]) + SUM(Usage_Fact[Support_Cost_USD]) + SUM(Usage_Fact[SLA_Credits_USD]))
+
+Revenue = SUM(Usage_Fact[Revenue_USD])
+
+Revenue per Compute Hour = DIVIDE([Revenue], SUM(Usage_Fact[Usage_Hours]))
+
+SLA Reliability % =
+1 -
+DIVIDE(
+    SUM('Usage_Fact'[Outage_Hours]),
+    COUNTROWS('Usage_Fact') * 720
+)
+
+Total Cost =
+SUM('Usage_Fact'[Infrastructure_Cost_USD])
++
+SUM('Usage_Fact'[Energy_Cost_USD])
++
+SUM('Usage_Fact'[Cloud_Provider_Cost_USD])
++
+SUM('Usage_Fact'[Support_Cost_USD])
++
+SUM('Usage_Fact'[SLA_Credits_USD])
+
+Total Orders = SUM(Usage_Fact[Orders])</code></pre>
+        </section>
+    </main>
+
+</body>
+</html>
