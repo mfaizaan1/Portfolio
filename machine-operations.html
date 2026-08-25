@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Machine Operations</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f1014;
+            color: #f6d365;
+        }
+
+        header,
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 42px 0 24px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 22px;
+            color: #ffd84d;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 46px;
+            color: #ffd84d;
+        }
+
+        .subtitle {
+            margin: 10px 0 0;
+            color: #e8b94a;
+            font-size: 18px;
+        }
+
+        .dashboard-preview {
+            overflow: hidden;
+            border: 1px solid rgba(255, 216, 77, 0.22);
+            border-radius: 12px;
+            background: #181a20;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .dashboard-preview img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .details {
+            margin: 28px 0 60px;
+            padding: 24px;
+            border: 1px solid rgba(255, 216, 77, 0.18);
+            border-radius: 12px;
+            background: #181a20;
+        }
+
+        .details h2 {
+            margin: 0 0 12px;
+            color: #ffd84d;
+            font-size: 24px;
+        }
+
+        .details p {
+            margin: 0 0 18px;
+            color: #f4d884;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .details h3 {
+            margin: 20px 0 8px;
+            color: #ffd84d;
+            font-size: 19px;
+        }
+
+        .details ul {
+            margin: 0;
+            padding-left: 22px;
+            color: #f4d884;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .details li {
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a class="back-link" href="index.html">Back to Creations</a>
+        <h1>Machine Operations</h1>
+        <p class="subtitle">Data Visualization Project</p>
+    </header>
+
+    <main>
+        <section class="dashboard-preview" aria-label="Machine Operations dashboard preview">
+            <img src="machine-operations.png" alt="Machine Operations dashboard">
+        </section>
+
+        <section class="details">
+            <h2>Project Details</h2>
+            <p>This Machine Operations Dashboard is built for sellers who need a clear, professional way to present operational performance. It makes machine activity easier to review, compare, and understand at a glance, helping buyers quickly see where production is performing well and where downtime or defective parts may be affecting output.</p>
+
+            <h3>Tools Used</h3>
+            <p>Power BI and Power Query.</p>
+
+            <h3>Key Metrics Included</h3>
+            <ul>
+                <li>Total Defective Parts</li>
+                <li>Total Downtime</li>
+                <li>Sum of Defective Parts by Machine ID</li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Airline Report</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f1014;
+            color: #f6d365;
+        }
+
+        header,
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 42px 0 24px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 22px;
+            color: #ffd84d;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 46px;
+            color: #ffd84d;
+        }
+
+        .subtitle {
+            margin: 10px 0 0;
+            color: #e8b94a;
+            font-size: 18px;
+        }
+
+        .dashboard-preview {
+            overflow: hidden;
+            border: 1px solid rgba(255, 216, 77, 0.22);
+            border-radius: 12px;
+            background: #181a20;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .dashboard-preview img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .details {
+            margin: 28px 0 60px;
+            padding: 24px;
+            border: 1px solid rgba(255, 216, 77, 0.18);
+            border-radius: 12px;
+            background: #181a20;
+        }
+
+        .details h2 {
+            margin: 0 0 12px;
+            color: #ffd84d;
+            font-size: 24px;
+        }
+
+        .details p {
+            margin: 0 0 18px;
+            color: #f4d884;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .details h3 {
+            margin: 20px 0 8px;
+            color: #ffd84d;
+            font-size: 19px;
+        }
+
+        .details ul,
+        .details ol {
+            margin: 0;
+            padding-left: 22px;
+            color: #f4d884;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .details li {
+            margin-bottom: 4px;
+        }
+
+        .data-model {
+            margin: 12px 0 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 216, 77, 0.18);
+            border-radius: 12px;
+            background: #101116;
+        }
+
+        .data-model img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .measure-list {
+            margin: 0;
+            padding: 16px;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 216, 77, 0.18);
+            border-radius: 8px;
+            background: #101116;
+            color: #f4d884;
+            font-size: 15px;
+            line-height: 1.7;
+            white-space: pre-wrap;
+        }
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a class="back-link" href="index.html">Back to Creations</a>
+        <h1>Airline Report</h1>
+        <p class="subtitle">Data Visualization Project</p>
+    </header>
+
+    <main>
+        <section class="dashboard-preview" aria-label="Airline Report dashboard preview">
+            <img src="airline-report.png" alt="Airline Report dashboard">
+        </section>
+
+        <section class="details">
+            <h2>Project Details</h2>
+            <p>This Airline Report Dashboard is built for sellers who need a clear, credible way to present flight performance insights. It turns airline reporting data into a visual format, helping users scan key patterns and review performance information quickly.</p>
+
+            <p>The dashboard is designed to help stakeholders, such as teams at the Federal Aviation Administration, understand flight performance by drilling into delays and cancellations. It helps users analyze performance by airport, airline, and day of the week to determine why flights were disrupted and identify which airlines are the most or least reliable.</p>
+
+            <h3>Tools Used</h3>
+            <p>Power BI and Power Query.</p>
+
+            <h3>Main Questions to Answer</h3>
+            <ol>
+                <li>Are the airlines reliable? If so, which ones are the most and least reliable?</li>
+                <li>Why are the flights getting disrupted?</li>
+            </ol>
+
+            <h3>Key Business Metrics</h3>
+            <ul>
+                <li>Total Flights On-Time</li>
+                <li>Total Flights Cancelled</li>
+                <li>Total Flights Delayed</li>
+            </ul>
+            <p>These metrics are presented in KPI cards and supported by additional visuals for deeper performance analysis.</p>
+
+            <h3>Data Model</h3>
+            <p>A STAR schema data model was created with three dimension tables, cancellation_codes, airports, and airlines, plus one fact table, flights.</p>
+            <figure class="data-model">
+                <img src="airline-data-model.png" alt="Airline report STAR schema data model">
+            </figure>
+
+            <h3>DAX Measures</h3>
+            <pre class="measure-list"><code>% of Flights Cancelled = DIVIDE(flights[Total Flights Cancelled], [Total Flights])
+% of Flights Delayed = DIVIDE(flights[Total Flights Delayed], [Total Flights])
+% of Flights On-Time = DIVIDE(flights[Total Flights On-Time], [Total Flights])
+Total Flights = COUNTROWS(flights)
+Total Flights Cancelled = CALCULATE(COUNTROWS(flights), flights[CANCELLED] = 1)
+Total Flights Delayed = CALCULATE([Total Flights], flights[Status] = "Delayed")
+Total Flights On-Time = CALCULATE([Total Flights], flights[Status] = "On-Time")</code></pre>
+        </section>
+    </main>
+
+</body>
+</html>

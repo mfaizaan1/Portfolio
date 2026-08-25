@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Creations</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f1014;
+            color: #f6d365;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 30px;
+        }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin: 0;
+            color: #ffd84d;
+            background: linear-gradient(90deg, #fff3a3, #ffc83d, #d99a16);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            margin: 10px 0 0;
+            font-size: 20px;
+            color: #e8b94a;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 26px;
+        }
+
+        .tab {
+            border: 1px solid rgba(255, 216, 77, 0.45);
+            border-radius: 999px;
+            padding: 12px 20px;
+            background: #ffd84d;
+            color: #181a20;
+            font: inherit;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(255, 216, 77, 0.16);
+        }
+
+        .category {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .dashboard {
+            background: #181a20;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 216, 77, 0.22);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease;
+        }
+
+        .dashboard:hover {
+            transform: translateY(-5px);
+        }
+
+        .dashboard a {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .dashboard a:focus-visible {
+            outline: 3px solid #ffd84d;
+            outline-offset: -3px;
+        }
+
+        .dashboard img {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        .dashboard h2 {
+            margin: 0;
+            padding: 16px 18px 18px;
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffd84d;
+        }
+
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                width: 92%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Creations</h1>
+        <p class="subtitle">By Faizaan</p>
+    </header>
+
+    <nav class="tabs" aria-label="Project categories">
+        <button class="tab" type="button" aria-selected="true">Data Visualizations</button>
+    </nav>
+
+    <main class="category">
+        <section class="gallery" aria-label="Data Visualizations">
+
+            <div class="dashboard">
+                <a href="machine-operations.html" aria-label="Open Machine Operations dashboard details">
+                    <img src="machine-operations.png" alt="Machine Operations dashboard">
+                </a>
+                <h2>Machine Operations</h2>
+            </div>
+
+            <div class="dashboard">
+                <a href="airline-report.html" aria-label="Open Airline Report dashboard details">
+                    <img src="airline-report.png" alt="Airline Report dashboard">
+                </a>
+                <h2>Airline Report</h2>
+            </div>
+
+            <div class="dashboard">
+                <a href="data-operations.html" aria-label="Open Data Infrastructure Operation dashboard details">
+                    <img src="data-operations.png" alt="Data Infrastructure Operation dashboard">
+                </a>
+                <h2>Data Infrastructure Operation</h2>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
